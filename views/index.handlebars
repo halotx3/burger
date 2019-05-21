@@ -8,14 +8,14 @@
     <input type="text" id="bur" name="name">
   </div>
 
-  <button type="submit">Add Burger</button>
+  <button id='bSub' type="submit">Add Burger</button>
 
 <h2>Burgers waiting to be devoured</h2>
 
 <ul>
-  {{#each cats}}
-    {{#unless sleepy}}
-      {{> cats/cat-block sleep=true}}
+  {{#each burgers}}
+    {{#unless devoured}}
+      {{> burgers/burger-block devour=false}}
     {{/unless}}
   {{/each}}
 </ul>
@@ -23,9 +23,9 @@
 <h2>Devoured Burgers</h2>
 
 <ul>
-  {{#each cats}}
-    {{#if sleepy}}
-      {{> cats/cat-block sleep=false}}
+  {{#each burgers}}
+    {{#if devoured}}
+      {{> burgers/burgerD-block devour=true}}
     {{/if}}
   {{/each}}
 </ul>
